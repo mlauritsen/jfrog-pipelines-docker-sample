@@ -7,11 +7,11 @@ resources:
       branches:
         include: master
 
-  - name: dbp_image3
+  - name: dbp_image4
     type: Image
     configuration:
       registry: myArtifactory                           # <-- replace with your artifactory integration
-      sourceRepository: default-docker-local/            # <-- required if registry is Artifactory
+      sourceRepository: default-docker-local            # <-- required if registry is Artifactory
       imageName: mortenltest.jfrog.io/artifactory/default-docker-local/mydockerimage  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
@@ -51,13 +51,13 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: default-docker-local/mydockerimage
+          targetRepository: default-docker-local
           integrations:
             - name: myArtifactory                            # <-- replace with your artifactory integration
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: dbp_image3
+            - name: dbp_image4
 
       - name: publish_dbp_build
         type: PublishBuildInfo
