@@ -11,7 +11,7 @@ resources:
     type: Image
     configuration:
       registry: myArtifactory                           # <-- replace with your artifactory integration
-      sourceRepository: docker_local                    # <-- required if registry is Artifactory
+      sourceRepository: default-docker-local            # <-- required if registry is Artifactory
       imageName: mortenltest.jfrog.io/artifactory/default-docker-local/myDockerImage  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
