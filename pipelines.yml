@@ -51,7 +51,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: docker-local
+          targetRepository: default-docker-local
           integrations:
             - name: myArtifactory                            # <-- replace with your artifactory integration
           inputSteps:
